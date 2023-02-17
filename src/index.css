@@ -1,0 +1,121 @@
+@tailwind base;
+
+@layer base {
+  html.dark {
+    @apply bg-gray-900;
+  }
+
+  html {
+    @apply font-Vazirmatn bg-gray-100
+  }
+  
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Vazirmatn", sans-serif;
+  src: url("'https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap'");
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* 
+.expanded-list-words {
+  min-height: 50vh;
+  width: calc(50% - 3vw);
+} */
+
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.jiggle {
+  animation: shake 250ms ease-in-out;
+}
+
+.slide-in-text {
+  animation: slide-in .15s linear;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes shake {
+  10% {
+    transform: translateX(-5%);
+  }
+
+  30% {
+    transform: translateX(5%);
+  }
+
+  50% {
+    transform: translateX(-6%);
+  }
+
+  70% {
+    transform: translateX(6%);
+  }
+
+  90% {
+    transform: translateX(-5%)
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+ 
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keypad-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.keypad-key {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background-color: #eee;
+  color: aqua;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.keypad-action {
+  width: 200px;
+  height: 80px;
+  margin: 10px;
+  background-color: #f00;
+  border: none;
+  border-radius: 5px;
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
