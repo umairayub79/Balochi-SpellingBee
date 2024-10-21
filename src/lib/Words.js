@@ -7,10 +7,6 @@ export const getWordOfTheDay = () => {
     const msInDay = 86400000
     const index = Math.floor((now - epochMs) / msInDay) % Letters.length;    
     // const nextday = (index + 1) * msInDay + epochMs
-    if (!Letters[index]) {
-      console.warn(`Index ${index} is out of bounds. loading first game.`);
-      index = 1; // Fallback to the first entry
-    }
     return {
       todaysLetters: (Letters[index].letters),
       validWords: Letters[index].validWords,
