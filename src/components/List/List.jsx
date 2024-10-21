@@ -31,7 +31,7 @@ const List = React.memo(({ foundWords }) => {
       <div key={"list"} className={showList ? "border border-gray-300 dark:border-gray-600 rounded-lg w-full p-3 flex flex-row justify-between items-center min-h-[70vh] " : "border border-gray-300 dark:border-gray-600  rounded-lg w-full p-3 flex flex-row justify-between items-center"}>
         {
           showList ? <motion.div key={"expanded-list"} initial={{ y: -30, }} animate={{ y: 0, x: 0 }} className='w-full self-start'>
-            <p className="pb-2">{foundWords.length == 1 ? `تو ${foundWords.length} لبزے جوڑ کُتگ` : `تو ${foundWords.length} لبز جوڑ کُتگ`}</p>
+            <p className="pb-2 text-xl">{foundWords.length == 1 ? `تو ${foundWords.length} لبزے جوڑ کُتگ` : `تو ${foundWords.length} لبز جوڑ کُتگ`}</p>
             <div className='w-full grid grid-cols-3'>
               {foundWords.length < 1 && <p className='text-gray-400'>تئی لبز۔۔۔</p>}
               {foundWords.length > 0 && foundWords.map((word) => {

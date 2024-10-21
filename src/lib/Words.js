@@ -1,13 +1,16 @@
 import Letters from '../constants/games.json'
 
 export const getWordOfTheDay = () => {
-    // January 1, 2023 Game Epoch
-    const epochMs = new Date(2023, 0, 0).valueOf()
+    // January 1, 2024 Game Epoch
+    const epochMs = new Date(2024, 0, 0).valueOf()
     const now = Date.now()
     const msInDay = 86400000
-    const index = Math.floor((now - epochMs) / msInDay)
+    const index = Math.floor((now - epochMs) / msInDay) % Letters.length;    
     // const nextday = (index + 1) * msInDay + epochMs
-  
+    if (!Letters[index]) {
+      console.warn(`Index ${index} is out of bounds. loading first game.`);
+      index = 1; // Fallback to the first entry
+    }
     return {
       todaysLetters: (Letters[index].letters),
       validWords: Letters[index].validWords,
